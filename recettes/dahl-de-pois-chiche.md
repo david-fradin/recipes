@@ -5,6 +5,7 @@ cook_time: 0
 servings: 4
 difficulty: "Facile"
 category: "Plat"
+tags: ["Salé", "Végétarien", "À la poêle", "Express (<25 min)", "test"]
 ---
 
 # Dahl de pois chiche
