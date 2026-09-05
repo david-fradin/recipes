@@ -3,15 +3,15 @@
     "siteTitle": "Mon Carnet Gourmand",
     "siteDescription": "Recettes de cuisine authentiques, fraîches et savoureuses",
     "baseUrl": "https://mon-site-cuisine.github.io",
-    "themeColor": "#d97706",
-    "bgTone": "chalkboard",
-    "themePresetId": "bistro-chalkboard",
-    "fontFamily": "serif",
+    "themeColor": "#10b981",
+    "bgTone": "dark",
+    "themePresetId": "cyber-dark",
+    "fontFamily": "mono",
     "enableSearch": true,
     "enableServingScaler": true,
     "enableTagsFilter": true,
     "footerText": "© 2026 Mon Carnet Gourmand • KitchenStack SSG"
   },
   "recipesCount": 14,
-  "lastUpdated": "2026-09-05T18:55:29.530Z"
+  "lastUpdated": "2026-09-05T19:02:22.504Z"
 }
