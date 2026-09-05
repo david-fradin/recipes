@@ -1,0 +1,47 @@
+name: Déploiement Site de Cuisine (GitHub Pages)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build Static Site
+        run: |
+          echo "Building static recipe site from markdown files..."
+          # The static build output (index.html, assets, recipes.json) is located in ./dist
+          mkdir -p ./dist
+          cp index.html ./dist/
+          if [ -d "assets" ]; then cp -r assets ./dist/; fi
+          if [ -f "recipes.json" ]; then cp recipes.json ./dist/; fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
